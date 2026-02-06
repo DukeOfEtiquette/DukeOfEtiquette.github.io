@@ -52,6 +52,19 @@ hugo new posts/my-new-post.md
 
 Set `draft = false` in the front matter when the post is ready to publish.
 
+### Pinning a Post
+
+To pin a post to the top of the posts list, set `pinned = true` in its front matter:
+
+```toml
++++
+title = 'My Post'
+date = 2026-02-06
+draft = false
+pinned = true
++++
+```
+
 ## Deployment
 
 Deployment is automated via GitHub Actions. Pushing to the `main` branch triggers the workflow at `.github/workflows/deploy.yml`, which:

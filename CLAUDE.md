@@ -32,6 +32,14 @@ hugo new posts/my-new-post.md
 - Front matter uses TOML (`+++` delimiters)
 - Set `draft = false` when ready to publish
 
+## Pinned Posts
+
+Add `pinned = true` to a post's front matter to pin it to the top of the posts list page. Pinned posts appear above regular posts on page 1 only.
+
+- The list template override lives in `layouts/_default/list.html`
+- Post card rendering is in `layouts/partials/post-entry.html`
+- Pinned post CSS is in `layouts/partials/custom-head.html`
+
 ## Content Guidelines
 
 See `STYLE_GUIDE.md` for voice, prose, and structural requirements. Key points:
@@ -55,6 +63,7 @@ grep -r 'draft = true' content/
 ```
 archetypes/        # Content templates (default.md)
 content/posts/     # Blog posts (Markdown + TOML front matter)
+layouts/           # Template overrides (list page, post entry, custom head CSS)
 .github/workflows/ # GitHub Actions deploy workflow
 hugo.toml          # Site configuration
 Dockerfile         # Local dev container
