@@ -1,7 +1,6 @@
 baseURL = 'https://DukeOfEtiquette.github.io/'
 title = 'DukeOfEtiquette'
 languageCode = 'en-us'
-theme = 'hugo-blog-awesome'
 defaultContentLanguage = 'en'
 enableEmoji = true
 enableRobotsTXT = true
@@ -48,3 +47,7 @@ enableRobotsTXT = true
   name = 'Posts'
   url = '/posts/'
   weight = 20
+
+[module]
+  [[module.imports]]
+    path = 'github.com/hugo-sid/hugo-blog-awesome'
