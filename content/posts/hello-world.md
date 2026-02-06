@@ -1,11 +1,11 @@
 +++
-title = 'Hello World'
+title = 'Hello NuWorld!'
 date = 2026-02-06
 draft = false
 +++
 
-Welcome to my blog. This is a space where I'll be documenting what I learn as I explore AI tools — how they work, what they're good at, where they fall short, and how I use them day to day.
+The goal of this blog is to document my learning of AI tools, as well as document the podcasts/blogs/articles that I consume and my reaction to them.
 
-The goal is simple: write things down as I go so I can look back on what I've learned and maybe help someone else along the way.
+All posts in this blog are certified Artisanal Human Content cursted by a living-in-the-flesh humanbeing.
 
-More to come.
+But you bet your sweet ass it was built by an agent!
