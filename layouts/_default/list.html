@@ -1,0 +1,27 @@
+{{ define "main" }}
+<main class="main">
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+  </header>
+
+  {{ $pinned := where .RegularPages "Params.pinned" true }}
+  {{ $regular := where .RegularPages "Params.pinned" "!=" true }}
+  {{ $paginator := .Paginate $regular }}
+
+  {{/* Render pinned posts only on the first page */}}
+  {{ if and (gt (len $pinned) 0) (eq $paginator.PageNumber 1) }}
+  {{ range $pinned }}
+  {{ partial "post-entry.html" . }}
+  {{ end }}
+  {{ end }}
+
+  {{/* Render regular posts (paginated) */}}
+  {{ range $paginator.Pages }}
+  {{ partial "post-entry.html" . }}
+  {{ end }}
+
+  {{ if gt $paginator.TotalPages 1 }}
+  {{ template "_internal/pagination.html" . }}
+  {{ end }}
+</main>
+{{ end }}
