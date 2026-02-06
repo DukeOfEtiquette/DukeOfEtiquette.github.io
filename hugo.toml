@@ -14,9 +14,9 @@ enableRobotsTXT = true
 
 [params.author]
   avatar = 'avatar.jpg'
-  intro = 'DukeOfEtiquette'
+  intro = 'Artisanal Human Content'
   name = 'DukeOfEtiquette'
-  description = 'A personal blog documenting my learning journey with AI tools.'
+  description = 'content curated by a living-in-the-flesh humanbeing'
 
 [[params.socialIcons]]
   name = 'github'
