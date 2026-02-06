@@ -1,0 +1,50 @@
+baseURL = 'https://DukeOfEtiquette.github.io/'
+title = 'DukeOfEtiquette'
+languageCode = 'en-us'
+theme = 'hugo-blog-awesome'
+defaultContentLanguage = 'en'
+enableEmoji = true
+enableRobotsTXT = true
+
+[params]
+  sitename = 'DukeOfEtiquette'
+  defaultColor = 'auto'
+  dateFormat = 'January 2, 2006'
+  rssFeedDescription = 'summary'
+  goToTop = true
+
+[params.author]
+  avatar = 'avatar.jpg'
+  intro = 'DukeOfEtiquette'
+  name = 'DukeOfEtiquette'
+  description = 'A personal blog documenting my learning journey with AI tools.'
+
+[[params.socialIcons]]
+  name = 'github'
+  url = 'https://github.com/DukeOfEtiquette'
+
+[[params.socialIcons]]
+  name = 'Rss'
+  url = '/index.xml'
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+    ordered = false
+
+[[menu.main]]
+  pageRef = '/'
+  name = 'Home'
+  url = '/'
+  weight = 10
+
+[[menu.main]]
+  pageRef = '/posts'
+  name = 'Posts'
+  url = '/posts/'
+  weight = 20
