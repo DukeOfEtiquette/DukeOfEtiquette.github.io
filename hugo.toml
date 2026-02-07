@@ -16,7 +16,7 @@ enableRobotsTXT = true
   avatar = 'avatar.jpg'
   intro = 'Artisanal Human Content'
   name = 'DukeOfEtiquette'
-  description = 'curated by a living-in-the-flesh humanbeing'
+  description = 'curated by a living-in-the-flesh human being'
 
 [[params.socialIcons]]
   name = 'github'
