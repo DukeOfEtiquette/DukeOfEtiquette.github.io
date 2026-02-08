@@ -58,6 +58,18 @@ Run `/style-review <post-path>` to review a draft post against `STYLE_GUIDE.md`.
 
 - Skill definition lives in `.claude/skills/style-review/SKILL.md`
 
+## Fact Check
+
+Run `/fact-check <post-path>` to verify factual claims in a post against official documentation. The command extracts claims about AI products and services, researches them via web search, and produces a report. It does not make or suggest changes — it only reports findings.
+
+```bash
+# Examples
+/fact-check content/posts/my-post.md
+/fact-check my-post.md
+```
+
+- Skill definition lives in `.claude/skills/fact-check/SKILL.md`
+
 ## Build & Validation
 
 ```bash
