@@ -46,6 +46,18 @@ See `STYLE_GUIDE.md` for voice, prose, and structural requirements. Key points:
 - Every post ends with a **"But don't take my word for it!"** section
 - All content is human-curated — do not generate generic filler or repackage others' content
 
+## Style Review
+
+Run `/style-review <post-path>` to review a draft post against `STYLE_GUIDE.md`. The command reads the style guide, evaluates the post, and produces a report covering voice & prose, grammar & spelling, and structure. It does not make or suggest changes — it only reports findings.
+
+```bash
+# Examples
+/style-review content/posts/my-post.md
+/style-review my-post.md
+```
+
+- Skill definition lives in `.claude/skills/style-review/SKILL.md`
+
 ## Build & Validation
 
 ```bash
