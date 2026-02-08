@@ -111,3 +111,41 @@
     margin-bottom: 0.125rem;
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var el = document.querySelector('.author-name');
+    if (!el) return;
+    el.innerHTML = el.innerHTML.replace('Artis', '<span class="artis-hide">Artis</span>');
+    var span = el.querySelector('.artis-hide');
+    var bgColor = getComputedStyle(document.body).backgroundColor;
+
+    function flicker() {
+      var off = bgColor;
+      var on = '';
+      // rapid flickers then hold off, then flicker back on
+      var steps = [
+        [off, 68],  [on, 51],   // quick flicker
+        [off, 85],  [on, 42],   // another flicker
+        [off, 102], [on, 34],   // shorter flash
+        [off, 680],             // hold dark
+        [on, 0]                 // snap back on
+      ];
+
+      var i = 0;
+      function next() {
+        if (i >= steps.length) return;
+        span.style.color = steps[i][0];
+        var delay = steps[i][1];
+        i++;
+        setTimeout(next, delay);
+      }
+      next();
+    }
+
+    setTimeout(function loop() {
+      flicker();
+      setTimeout(loop, 66666);
+    }, 66666);
+  });
+</script>
