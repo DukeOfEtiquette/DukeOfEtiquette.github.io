@@ -9,7 +9,7 @@ Personal blog built with [Hugo](https://gohugo.io/) using the [Hugo Blog Awesome
 - **Hugo** (static site generator, extended edition)
 - **Go modules** for theme management (go 1.21+)
 - **Docker / Docker Compose** for local development
-- **GitHub Actions** for CI/CD (deploys on push to `master`)
+- **GitHub Actions** for CI/CD (PR validation + deploys on merge to `master`)
 
 ## Local Development
 
@@ -70,6 +70,29 @@ Run `/fact-check <post-path>` to verify factual claims in a post against officia
 
 - Skill definition lives in `.claude/skills/fact-check/SKILL.md`
 
+## Branching & Pull Request Workflow
+
+**Direct pushes to `master` are forbidden.** All changes must be submitted via pull request.
+
+### Rules for Claude agents
+
+1. **Never commit or push directly to `master`.** Always work on a feature branch.
+2. **Create a feature branch** before making any changes:
+   ```bash
+   git checkout -b your-branch-name
+   ```
+3. **Commit changes** to the feature branch with clear, descriptive messages.
+4. **Push the feature branch** to the remote:
+   ```bash
+   git push -u origin your-branch-name
+   ```
+5. **Open a pull request** targeting `master` using `gh pr create`.
+6. **Never force-push to `master`** or bypass branch protections.
+
+If you are already on `master`, switch to a new branch **before** making any commits. Under no circumstances should a Claude agent push commits to `master`.
+
+See `CONTRIBUTING.md` for the full contribution workflow.
+
 ## Build & Validation
 
 ```bash
@@ -86,8 +109,18 @@ grep -r 'draft = true' content/
 archetypes/        # Content templates (default.md)
 content/posts/     # Blog posts (Markdown + TOML front matter)
 layouts/           # Template overrides (list page, post entry, custom head CSS)
-.github/workflows/ # GitHub Actions deploy workflow
+.github/workflows/ # GitHub Actions (deploy.yml + ci.yml for PR validation)
+.githooks/         # Git hooks (pre-push blocks direct pushes to master)
 hugo.toml          # Site configuration
 Dockerfile         # Local dev container
 docker-compose.yml # Docker Compose config
+CONTRIBUTING.md    # Contribution workflow and PR rules
+```
+
+## Git Hooks Setup
+
+This project uses a pre-push hook to block direct pushes to `master`. To activate the hook after cloning:
+
+```bash
+git config core.hooksPath .githooks
 ```

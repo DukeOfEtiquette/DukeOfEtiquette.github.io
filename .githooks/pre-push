@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+#
+# Pre-push hook: blocks direct pushes to master.
+# All changes must go through a pull request.
+#
+# To install: git config core.hooksPath .githooks
+
+protected_branch="master"
+current_branch=$(git symbolic-ref --short HEAD 2>/dev/null)
+
+while read -r local_ref local_oid remote_ref remote_oid; do
+  if echo "$remote_ref" | grep -qE "refs/heads/${protected_branch}$"; then
+    echo "ERROR: Direct pushes to '${protected_branch}' are not allowed."
+    echo "Please push to a feature branch and open a pull request instead."
+    echo "See CONTRIBUTING.md for the full workflow."
+    exit 1
+  fi
+done
+
+exit 0
