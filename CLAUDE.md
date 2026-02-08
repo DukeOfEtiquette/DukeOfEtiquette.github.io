@@ -13,13 +13,11 @@ Personal blog built with [Hugo](https://gohugo.io/) using the [Hugo Blog Awesome
 
 ## Local Development
 
+Always use Docker for local development. Do not run Hugo directly.
+
 ```bash
-# Docker (recommended)
 docker compose up
 # Site at http://localhost:1313
-
-# Or with Hugo installed locally
-hugo server -D
 ```
 
 ## Creating Posts

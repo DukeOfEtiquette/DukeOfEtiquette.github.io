@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="{{ mul .width 1.875 }}" height="{{ mul .height 1.875 }}" viewBox="0 0 110 110" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<title>Home</title>
+  <circle cx="55" cy="8.4" r="6.6" fill="red" class="antenna-light"/>
+  <line x1="55" y1="15" x2="55" y2="38"/>
+  <rect x="15" y="38" width="80" height="60" rx="6"/>
+  <rect x="5" y="48" width="10" height="16" rx="3" fill="yellow" class="antenna-light"/>
+  <rect x="95" y="48" width="10" height="16" rx="3" fill="yellow" class="antenna-light"/>
+  <circle cx="38" cy="58" r="7.125" fill="#00ff00"/>
+  <circle cx="72" cy="58" r="7.125" fill="#00ff00"/>
+  <rect x="37" y="78" width="36" height="8" rx="2"/>
+</svg>

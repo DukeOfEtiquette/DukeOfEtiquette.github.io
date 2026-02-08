@@ -1,7 +1,52 @@
 <style>
+  @media (max-width: 767px) {
+    .main {
+      padding-top: 1rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    body {
+      font-size: 1.25rem;
+      padding-top: 4rem;
+    }
+  }
+
+  .page-header {
+    padding-left: .3rem;
+  }
+
+  .menu-icon {
+    padding-right: 1rem;
+  }
+
+  .logo svg {
+    vertical-align: middle;
+    margin-top: -12px;
+  }
+
+  .antenna-light {
+    animation: blink 6s ease-in-out infinite;
+  }
+
+  @keyframes blink {
+    0%, 70% { fill-opacity: 1; }
+    80%, 95% { fill-opacity: 0; }
+    100% { fill-opacity: 1; }
+  }
+
+
+  .main {
+    max-width: calc(890px - (30px * 2));
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+  }
+
   .post-entry {
     position: relative;
-    padding: 1.5rem 0;
+    padding: 1.0rem .3rem;
     border-bottom: 1px solid var(--border, #e2e2e2);
   }
 
