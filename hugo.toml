@@ -7,7 +7,7 @@ enableRobotsTXT = true
 
 [params]
   sitename = 'DukeOfEtiquette'
-  defaultColor = 'auto'
+  defaultColor = 'dark'
   dateFormat = 'January 2, 2006'
   rssFeedDescription = 'summary'
   goToTop = true
