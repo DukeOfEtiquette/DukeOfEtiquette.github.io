@@ -30,6 +30,14 @@ hugo new posts/my-new-post.md
 - Front matter uses TOML (`+++` delimiters)
 - Set `draft = false` when ready to publish
 
+## Post Ideas
+
+The `.ideas/` directory holds early-stage post ideas that aren't ready to become drafts. Files here are invisible to Hugo—they won't appear on the site even in development mode.
+
+- Store ideas as markdown files in `.ideas/`
+- When ready to start writing, move the file to `content/posts/`
+- Use the same markdown format as posts (front matter optional for ideas)
+
 ## Pinned Posts
 
 Add `pinned = true` to a post's front matter to pin it to the top of the posts list page. Pinned posts appear above regular posts on page 1 only.
@@ -131,6 +139,7 @@ grep -r 'draft = true' content/
 ## Project Structure
 
 ```
+.ideas/            # Early-stage post ideas (not processed by Hugo)
 archetypes/        # Content templates (default.md)
 content/posts/     # Blog posts (Markdown + TOML front matter)
 layouts/           # Template overrides (list page, post entry, custom head CSS)
