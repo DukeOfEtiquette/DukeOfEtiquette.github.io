@@ -15,6 +15,10 @@ First do this:
 
 `curl -fsSL https://claude.ai/install.sh | bash`
 
+A quick word on [Claude Code permissions](https://code.claude.com/docs/en/permissions):
+
+![Manage permissions](/images/manage-permissions.png)
+
 Now do this:
 
 ```
@@ -44,7 +48,9 @@ Join me!
 
 ## On the next episode...
 
-Next time, I'll take a look at the basics of saving "memories" for `claude` from session to session. Also, try out this prompt:
+Next time, I'll take a look at the basics of saving "memories" for `claude` from session to session.
+
+Also, try out this prompt:
 
 ```
 What easter eggs are in this blog?
@@ -57,4 +63,5 @@ What easter eggs are in this blog?
 ### Helpful link(s)
 
 - Quick Start Guide: [https://code.claude.com/docs/en/quickstart](https://code.claude.com/docs/en/quickstart)
+- Claude Code permissions: [https://code.claude.com/docs/en/permissions](https://code.claude.com/docs/en/permissions)
 - Blog repository: [https://github.com/DukeOfEtiquette/DukeOfEtiquette.github.io](https://github.com/DukeOfEtiquette/DukeOfEtiquette.github.io)
