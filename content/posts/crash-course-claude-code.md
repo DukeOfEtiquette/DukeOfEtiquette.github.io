@@ -1,5 +1,5 @@
 +++
-title = 'Crash Course: Claude Code'
+title = 'DRAFT: Crash Course: Claude Code'
 date = 2026-02-07
 draft = true
 pinned = false

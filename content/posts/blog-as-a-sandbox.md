@@ -50,7 +50,11 @@ Next time, I'll take a look at the basics of saving "memories" for `claude` from
 What easter eggs are in this blog?
 ```
 
-### Helpful links
+### Helpful command(s)
+
+- `/exit` to exit the REPL
+
+### Helpful link(s)
 
 - Quick Start Guide: [https://code.claude.com/docs/en/quickstart](https://code.claude.com/docs/en/quickstart)
 - Blog repository: [https://github.com/DukeOfEtiquette/DukeOfEtiquette.github.io](https://github.com/DukeOfEtiquette/DukeOfEtiquette.github.io)
