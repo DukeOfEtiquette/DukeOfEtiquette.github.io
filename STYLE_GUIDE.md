@@ -14,7 +14,10 @@ Maintain correct grammar and spelling throughout every post. Proofread before pu
 
 ## Post Structure
 
-Every post must end with a section titled **"But don't take my word for it!"** containing:
+Every post must:
 
-1. A pre-written prompt the reader can paste into an AI chatbot to explore the topic on their own.
-2. Links to any podcasts, blogs, or articles that informed the post.
+1. End with a closing section (e.g., "On the next episode...", "But don't take my word for it!", or similar).
+2. Include at least one pre-written prompt the reader can paste into an AI chatbot to explore the topic.
+3. Include at least one link to official documentation, podcasts, blogs, or articles that informed the post.
+
+The prompt(s) and link(s) may appear anywhere in the post.

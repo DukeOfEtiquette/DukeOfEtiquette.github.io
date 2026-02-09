@@ -10,3 +10,9 @@ The goal of this blog is to document my learning of AI tools, as well as documen
 All posts in this blog are certified Artisanal Human Content curated by a living-in-the-flesh human being.
 
 But you bet your sweet ass it was built by an agent!
+
+---
+
+## Next post:
+
+[Blog as a Sandbox (BaaS)](/posts/blog-as-a-sandbox/)

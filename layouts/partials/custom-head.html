@@ -1,13 +1,98 @@
 <style>
+  pre>code {
+    font-size: .9rem;
+  }
+
+  .dark pre {
+    background: #2d333b;
+  }
+
+  .dark code {
+    background: #343942;
+    color: #adbac7;
+  }
+
+  .dark pre>code {
+    background: transparent;
+  }
+
+  pre {
+    position: relative;
+  }
+
+  .copy-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    cursor: pointer;
+    background: var(--secondary-bg, #e2e2e2);
+    color: var(--primary-text, #333);
+    border: none;
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  pre:hover .copy-btn {
+    opacity: 1;
+  }
+
+  .copy-btn:hover {
+    background: var(--primary, #1d7dfa);
+    color: #fff;
+  }
+
+  .dark .copy-btn {
+    background: #444c56;
+    color: #adbac7;
+  }
+
+  .dark .copy-btn:hover {
+    background: var(--primary, #1d7dfa);
+    color: #fff;
+  }
+
+  :not(pre)>code {
+    position: relative;
+  }
+
+  :not(pre)>code:hover {
+    opacity: 0.8;
+  }
+
+  :not(pre)>code.copied::after {
+    content: 'Copied!';
+    position: absolute;
+    top: -1.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.25rem 0.5rem;
+    font-size: 0.7rem;
+    background: var(--primary, #1d7dfa);
+    color: #fff;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
   @media (max-width: 767px) {
     .main {
       padding-top: 1rem;
+    }
+
+    .header {
+      margin-top: 2.5em;
     }
   }
 
   @media (min-width: 768px) {
     body {
       font-size: 1.25rem;
+    }
+
+    .header {
+      margin-top: 0;
     }
   }
 
@@ -110,7 +195,48 @@
     color: var(--primary, #1d7dfa);
     margin-bottom: 0.125rem;
   }
+
+  hr {
+    border: none;
+    border-top: 1px solid #000;
+    margin: 1rem 0;
+  }
+
+  html.dark hr {
+    border-top-color: #666;
+  }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Copy buttons for pre blocks
+    document.querySelectorAll('pre').forEach(function (pre) {
+      var btn = document.createElement('button');
+      btn.className = 'copy-btn';
+      btn.textContent = 'Copy';
+      btn.addEventListener('click', function () {
+        var code = pre.querySelector('code');
+        var text = code ? code.textContent : pre.textContent;
+        navigator.clipboard.writeText(text).then(function () {
+          btn.textContent = 'Copied!';
+          setTimeout(function () { btn.textContent = 'Copy'; }, 2000);
+        });
+      });
+      pre.appendChild(btn);
+    });
+
+    // Click to copy for inline code
+    document.querySelectorAll('code').forEach(function (code) {
+      if (code.parentElement.tagName === 'PRE') return;
+      code.addEventListener('click', function () {
+        navigator.clipboard.writeText(code.textContent).then(function () {
+          code.classList.add('copied');
+          setTimeout(function () { code.classList.remove('copied'); }, 1500);
+        });
+      });
+    });
+  });
+</script>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
@@ -125,8 +251,8 @@
       var on = '';
       // rapid flickers then hold off, then flicker back on
       var steps = [
-        [off, 68],  [on, 51],   // quick flicker
-        [off, 85],  [on, 42],   // another flicker
+        [off, 68], [on, 51],   // quick flicker
+        [off, 85], [on, 42],   // another flicker
         [off, 102], [on, 34],   // shorter flash
         [off, 680],             // hold dark
         [on, 0]                 // snap back on
