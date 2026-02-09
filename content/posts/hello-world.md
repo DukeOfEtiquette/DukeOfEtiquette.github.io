@@ -15,3 +15,5 @@ But you bet your sweet ass it was built by an agent!
 ## Next post:
 
 [Blog as a Sandbox (BaaS)](/posts/blog-as-a-sandbox/)
+
+Learn how to use this project as a sandbox to explore Claude Code's capabilities.

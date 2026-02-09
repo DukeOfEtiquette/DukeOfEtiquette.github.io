@@ -205,6 +205,46 @@
   html.dark hr {
     border-top-color: #666;
   }
+
+  /* Pagination */
+  .pagination {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 2rem 0 1rem;
+    margin: 0;
+  }
+
+  .pagination li a,
+  .pagination li span {
+    display: inline-block;
+    padding: 0.5rem 0.75rem;
+    text-decoration: none;
+    color: var(--secondary, #8b8b8b);
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .pagination li a:hover {
+    background: color-mix(in srgb, var(--secondary, #8b8b8b) 15%, transparent);
+    color: var(--primary-text, #333);
+  }
+
+  .pagination li.active a {
+    background: var(--primary, #1d7dfa);
+    color: #fff;
+  }
+
+  .pagination li.disabled span {
+    opacity: 0.4;
+    cursor: default;
+  }
+
+  .dark .pagination li a:hover {
+    color: #fff;
+  }
 </style>
 
 <script>

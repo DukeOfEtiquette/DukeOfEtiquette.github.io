@@ -1,5 +1,5 @@
 +++
-title = 'Models and agents and CLIs, oh my!'
+title = 'DRAFT: Models and agents and CLIs, oh my!'
 date = 2026-02-08
 draft = true
 pinned = false

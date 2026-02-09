@@ -1,5 +1,5 @@
 +++
-title = 'Prompts: The Socratic Method'
+title = 'DRAFT: Prompts: The Socratic Method'
 date = 2026-02-08
 draft = true
 pinned = false

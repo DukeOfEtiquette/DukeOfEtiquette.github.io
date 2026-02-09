@@ -1,5 +1,5 @@
 +++
-title = 'Lord of the Vibes'
+title = 'DRAFT: Lord of the Vibes'
 date = 2026-02-08
 draft = true
 pinned = false
