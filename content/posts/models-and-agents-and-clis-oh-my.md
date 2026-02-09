@@ -3,6 +3,7 @@ title = 'DRAFT: Models and agents and CLIs, oh my!'
 date = 2026-02-08
 draft = true
 pinned = false
+priority = 2
 +++
 
 - What is the diff between a model an agent and a harness?

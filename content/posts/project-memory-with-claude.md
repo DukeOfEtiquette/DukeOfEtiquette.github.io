@@ -3,6 +3,7 @@ title = 'DRAFT: Project Memory with Claude'
 date = 2026-02-09T21:31:38Z
 draft = true
 pinned = false
+priority = 1
 +++
 
 # DRAFT
