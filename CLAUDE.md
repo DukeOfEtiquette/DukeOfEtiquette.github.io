@@ -30,6 +30,26 @@ hugo new posts/my-new-post.md
 - Front matter uses TOML (`+++` delimiters)
 - Set `draft = false` when ready to publish
 
+## Draft Priority
+
+Drafts use a `priority` field in front matter to indicate planned release order (lower = release sooner):
+
+```toml
+priority = 1
+```
+
+- `priority = 1` is the next post to publish
+- Unprioritized drafts have no `priority` field
+- Update priorities as plans change
+
+## Post Ideas
+
+The `.ideas/` directory holds early-stage post ideas that aren't ready to become drafts. Files here are invisible to Hugo—they won't appear on the site even in development mode.
+
+- Store ideas as markdown files in `.ideas/`
+- When ready to start writing, move the file to `content/posts/`
+- Use the same markdown format as posts (front matter optional for ideas)
+
 ## Pinned Posts
 
 Add `pinned = true` to a post's front matter to pin it to the top of the posts list page. Pinned posts appear above regular posts on page 1 only.
@@ -50,12 +70,15 @@ See `STYLE_GUIDE.md` for voice, prose, and structural requirements. Key points:
 
 When the user asks for a summary of drafts, upcoming posts, what's in the pipeline, or anything about what content is coming up, **always** respond with a Markdown table listing every post in `content/posts/` that has `draft = true` in its front matter. The table must have these columns:
 
-| Post | File | Description |
-|------|------|-------------|
+| Priority | Post | File | Description |
+|----------|------|------|-------------|
 
+- **Priority** — the `priority` value from front matter, or "—" if not set.
 - **Post** — the `title` from the post's front matter.
 - **File** — relative path (e.g. `content/posts/my-post.md`).
 - **Description** — a single-sentence summary of the post's content. If the post body is too short or empty to summarize, write "*(no content yet)*".
+
+Sort the table by priority (lowest first). Drafts without a priority appear at the end.
 
 To build the table, read the front matter and body of every draft post. Do not omit any drafts and do not include published posts (`draft = false` or no `draft` field).
 
@@ -131,6 +154,7 @@ grep -r 'draft = true' content/
 ## Project Structure
 
 ```
+.ideas/            # Early-stage post ideas (not processed by Hugo)
 archetypes/        # Content templates (default.md)
 content/posts/     # Blog posts (Markdown + TOML front matter)
 layouts/           # Template overrides (list page, post entry, custom head CSS)

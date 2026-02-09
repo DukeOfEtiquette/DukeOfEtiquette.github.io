@@ -3,6 +3,7 @@ title = 'DRAFT: Crash Course: Claude Code'
 date = 2026-02-07
 draft = true
 pinned = false
+priority = 3
 +++
 
 ## Model vs LLM

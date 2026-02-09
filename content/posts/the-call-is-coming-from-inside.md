@@ -3,6 +3,7 @@ title = 'DRAFT: The call is coming from inside!'
 date = 2026-02-08
 draft = true
 pinned = false
+priority = 4
 +++
 
 - Be smart when installing and launching Claude Code!
