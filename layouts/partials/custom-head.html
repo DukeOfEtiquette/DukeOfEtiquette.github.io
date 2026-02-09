@@ -84,6 +84,24 @@
     .header {
       margin-top: 2.5em;
     }
+
+    .menu {
+      z-index: 100;
+    }
+
+    /* Mobile menu overlay - slightly transparent background */
+    .menu input[type="checkbox"]:checked ~ .trigger {
+      background-color: rgba(255, 255, 255, 0.85);
+    }
+
+    .dark .menu input[type="checkbox"]:checked ~ .trigger {
+      background-color: rgba(29, 30, 32, 0.85);
+    }
+
+    .footer {
+      position: relative;
+      z-index: 1;
+    }
   }
 
   @media (min-width: 768px) {
@@ -531,5 +549,24 @@
 
     // Start the initial idle timer
     resetIdleTimer();
+  });
+</script>
+
+<script>
+  // Close mobile menu when clicking outside menu items
+  document.addEventListener('DOMContentLoaded', function () {
+    var trigger = document.querySelector('.menu .trigger');
+    var checkbox = document.getElementById('menu-trigger');
+    if (!trigger || !checkbox) return;
+
+    trigger.addEventListener('click', function (e) {
+      // Don't close if clicking on a link, button, or the mode toggle
+      if (e.target.closest('a') || e.target.closest('button') || e.target.closest('#mode')) {
+        return;
+      }
+      checkbox.checked = false;
+      // Dispatch change event so theme.js removes the blur from .wrapper
+      checkbox.dispatchEvent(new Event('change'));
+    });
   });
 </script>
