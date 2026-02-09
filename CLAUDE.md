@@ -46,6 +46,19 @@ See `STYLE_GUIDE.md` for voice, prose, and structural requirements. Key points:
 - Every post ends with a **"But don't take my word for it!"** section
 - All content is human-curated — do not generate generic filler or repackage others' content
 
+## Draft Summary
+
+When the user asks for a summary of drafts, upcoming posts, what's in the pipeline, or anything about what content is coming up, **always** respond with a Markdown table listing every post in `content/posts/` that has `draft = true` in its front matter. The table must have these columns:
+
+| Post | File | Description |
+|------|------|-------------|
+
+- **Post** — the `title` from the post's front matter.
+- **File** — relative path (e.g. `content/posts/my-post.md`).
+- **Description** — a single-sentence summary of the post's content. If the post body is too short or empty to summarize, write "*(no content yet)*".
+
+To build the table, read the front matter and body of every draft post. Do not omit any drafts and do not include published posts (`draft = false` or no `draft` field).
+
 ## Style Review
 
 Run `/style-review <post-path>` to review a draft post against `STYLE_GUIDE.md`. The command reads the style guide, evaluates the post, and produces a report covering voice & prose, grammar & spelling, and structure. It does not make or suggest changes — it only reports findings.
