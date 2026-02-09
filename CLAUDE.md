@@ -106,6 +106,18 @@ If you are already on `master`, switch to a new branch **before** making any com
 
 See `CONTRIBUTING.md` for the full contribution workflow.
 
+### GitHub CLI Workaround
+
+If `gh pr create` fails with gitconfig permission errors, use the API directly:
+
+```bash
+gh api repos/DukeOfEtiquette/DukeOfEtiquette.github.io/pulls --method POST \
+  -f title="PR title" \
+  -f head="branch-name" \
+  -f base="master" \
+  -f body="PR description"
+```
+
 ## Build & Validation
 
 ```bash
