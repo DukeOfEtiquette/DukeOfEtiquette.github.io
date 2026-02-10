@@ -1,8 +1,8 @@
-# CLAUDE.md
+# GEMINI.md
 
 ## Project Overview
 
-Personal blog built with [Hugo](https://gohugo.io/) using the [Hugo Blog Awesome](https://github.com/hugo-sid/hugo-blog-awesome) theme, deployed to GitHub Pages at https://DukeOfEtiquette.github.io/.
+Personal blog built with [Hugo](https://gohugo.io/) using the [Hugo Blog Awesome](https://github.com/hugo-sid/hugo-blog-awesome) theme, deployed to GitHub Pages at https://DukeOfEtiquette.github.io/. This project is managed with the help of Gemini.
 
 ## Tech Stack
 
@@ -82,35 +82,17 @@ Sort the table by priority (lowest first). Drafts without a priority appear at t
 
 To build the table, read the front matter and body of every draft post. Do not omit any drafts and do not include published posts (`draft = false` or no `draft` field).
 
-## Style Review
+## Interacting with Gemini
 
-Run `/style-review <post-path>` to review a draft post against `STYLE_GUIDE.md`. The command reads the style guide, evaluates the post, and produces a report covering voice & prose, grammar & spelling, and structure. It does not make or suggest changes — it only reports findings.
+Gemini models have built-in tools like `google_web_search` that can be used for research. You can create custom tools and skills to extend Gemini's capabilities.
 
-```bash
-# Examples
-/style-review content/posts/my-post.md
-/style-review my-post.md
-```
-
-- Skill definition lives in `.claude/skills/style-review/SKILL.md`
-
-## Fact Check
-
-Run `/fact-check <post-path>` to verify factual claims in a post against official documentation. The command extracts claims about AI products and services, researches them via web search, and produces a report. It does not make or suggest changes — it only reports findings.
-
-```bash
-# Examples
-/fact-check content/posts/my-post.md
-/fact-check my-post.md
-```
-
-- Skill definition lives in `.claude/skills/fact-check/SKILL.md`
+This project had `Style Review` and `Fact Check` skills for another model. You can re-create them for Gemini using the `skill-creator` skill.
 
 ## Branching & Pull Request Workflow
 
 **Direct pushes to `master` are forbidden.** All changes must be submitted via pull request.
 
-### Rules for Claude agents
+### Rules for AI agents
 
 1. **Never commit or push directly to `master`.** Always work on a feature branch.
 2. **Create a feature branch** before making any changes:
@@ -125,7 +107,7 @@ Run `/fact-check <post-path>` to verify factual claims in a post against officia
 5. **Open a pull request** targeting `master` using `gh pr create`.
 6. **Never force-push to `master`** or bypass branch protections.
 
-If you are already on `master`, switch to a new branch **before** making any commits. Under no circumstances should a Claude agent push commits to `master`.
+If you are already on `master`, switch to a new branch **before** making any commits. Under no circumstances should an AI agent push commits to `master`.
 
 See `CONTRIBUTING.md` for the full contribution workflow.
 

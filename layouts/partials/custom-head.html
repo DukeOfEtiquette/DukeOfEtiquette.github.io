@@ -39,7 +39,8 @@
     opacity: 1;
   }
 
-  .copy-btn:hover {
+  .copy-btn:hover,
+  .dark .copy-btn:hover {
     background: var(--primary, #1d7dfa);
     color: #fff;
   }
@@ -47,11 +48,6 @@
   .dark .copy-btn {
     background: #444c56;
     color: #adbac7;
-  }
-
-  .dark .copy-btn:hover {
-    background: var(--primary, #1d7dfa);
-    color: #fff;
   }
 
   :not(pre)>code {
@@ -90,11 +86,11 @@
     }
 
     /* Mobile menu overlay - slightly transparent background */
-    .menu input[type="checkbox"]:checked ~ .trigger {
+    .menu input[type="checkbox"]:checked~.trigger {
       background-color: rgba(255, 255, 255, 0.85);
     }
 
-    .dark .menu input[type="checkbox"]:checked ~ .trigger {
+    .dark .menu input[type="checkbox"]:checked~.trigger {
       background-color: rgba(29, 30, 32, 0.85);
     }
 
@@ -128,10 +124,10 @@
   }
 
   .antenna-light {
-    animation: blink 6s ease-in-out infinite;
+    animation: easterEggBlink 6s ease-in-out infinite;
   }
 
-  @keyframes blink {
+  @keyframes easterEggBlink {
 
     0%,
     70% {
@@ -267,6 +263,13 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+    initCopyButtons();
+    initArtisFlicker();
+    initMatrixRain();
+    initMobileMenuClose();
+  });
+
+  function initCopyButtons() {
     // Copy buttons for pre blocks
     document.querySelectorAll('pre').forEach(function (pre) {
       var btn = document.createElement('button');
@@ -293,11 +296,9 @@
         });
       });
     });
-  });
-</script>
+  }
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
+  function initArtisFlicker() {
     var el = document.querySelector('.author-name');
     if (!el) return;
     el.innerHTML = el.innerHTML.replace('Artis', '<span class="artis-hide">Artis</span>');
@@ -331,11 +332,9 @@
       flicker();
       setTimeout(loop, 66666);
     }, 66666);
-  });
-</script>
+  }
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
+  function initMatrixRain() {
     var canvas = document.createElement('canvas');
     canvas.style.cssText = 'position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:0;transition:opacity 0.5s';
     document.body.appendChild(canvas);
@@ -549,12 +548,9 @@
 
     // Start the initial idle timer
     resetIdleTimer();
-  });
-</script>
+  }
 
-<script>
-  // Close mobile menu when clicking outside menu items
-  document.addEventListener('DOMContentLoaded', function () {
+  function initMobileMenuClose() {
     var trigger = document.querySelector('.menu .trigger');
     var checkbox = document.getElementById('menu-trigger');
     if (!trigger || !checkbox) return;
@@ -568,5 +564,5 @@
       // Dispatch change event so theme.js removes the blur from .wrapper
       checkbox.dispatchEvent(new Event('change'));
     });
-  });
+  }
 </script>
