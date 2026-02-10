@@ -13,6 +13,13 @@
       {{ .Date.Format (or site.Params.DateFormat "January 2, 2006") }}
     </time>
     &nbsp;&middot;&nbsp;{{ .ReadingTime }} min
+    {{ with .Params.tags }}
+    <span class="entry-tags">
+      {{ range . }}
+      <a href="{{ "tags/" | absURL }}{{ . | urlize }}/" class="tag" onclick="event.stopPropagation();">{{ . }}</a>
+      {{ end }}
+    </span>
+    {{ end }}
   </footer>
   <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
 </article>

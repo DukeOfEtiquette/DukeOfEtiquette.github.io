@@ -1,0 +1,12 @@
+{{ define "main" }}
+<main class="main">
+  <header class="page-header">
+    <h1>Posts tagged &ldquo;{{ .Title }}&rdquo;</h1>
+    <a href="{{ "tags/" | absURL }}" class="back-to-tags">&larr; All tags</a>
+  </header>
+
+  {{ range .Pages }}
+  {{ partial "post-entry.html" . }}
+  {{ end }}
+</main>
+{{ end }}
