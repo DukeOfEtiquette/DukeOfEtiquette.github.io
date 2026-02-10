@@ -39,7 +39,8 @@
     opacity: 1;
   }
 
-  .copy-btn:hover {
+  .copy-btn:hover,
+  .dark .copy-btn:hover {
     background: var(--primary, #1d7dfa);
     color: #fff;
   }
@@ -47,11 +48,6 @@
   .dark .copy-btn {
     background: #444c56;
     color: #adbac7;
-  }
-
-  .dark .copy-btn:hover {
-    background: var(--primary, #1d7dfa);
-    color: #fff;
   }
 
   :not(pre)>code {
@@ -90,11 +86,11 @@
     }
 
     /* Mobile menu overlay - slightly transparent background */
-    .menu input[type="checkbox"]:checked ~ .trigger {
+    .menu input[type="checkbox"]:checked~.trigger {
       background-color: rgba(255, 255, 255, 0.85);
     }
 
-    .dark .menu input[type="checkbox"]:checked ~ .trigger {
+    .dark .menu input[type="checkbox"]:checked~.trigger {
       background-color: rgba(29, 30, 32, 0.85);
     }
 
@@ -128,10 +124,10 @@
   }
 
   .antenna-light {
-    animation: blink 6s ease-in-out infinite;
+    animation: easterEggBlink 6s ease-in-out infinite;
   }
 
-  @keyframes blink {
+  @keyframes easterEggBlink {
 
     0%,
     70% {
@@ -266,7 +262,7 @@
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
+  function initCopyButtons() {
     // Copy buttons for pre blocks
     document.querySelectorAll('pre').forEach(function (pre) {
       var btn = document.createElement('button');
@@ -293,10 +289,24 @@
         });
       });
     });
-  });
-</script>
+  }
 
-<script>
+  function initMobileMenuClose() {
+    var trigger = document.querySelector('.menu .trigger');
+    var checkbox = document.getElementById('menu-trigger');
+    if (!trigger || !checkbox) return;
+
+    trigger.addEventListener('click', function (e) {
+      // Don't close if clicking on a link, button, or the mode toggle
+      if (e.target.closest('a') || e.target.closest('button') || e.target.closest('#mode')) {
+        return;
+      }
+      checkbox.checked = false;
+      // Dispatch change event so theme.js removes the blur from .wrapper
+      checkbox.dispatchEvent(new Event('change'));
+    });
+  }
+
   var EasterEggs = {
     // Note: Robot antenna blink is CSS-only (see .antenna-light keyframes above)
 
@@ -581,25 +591,8 @@
   };
 
   document.addEventListener('DOMContentLoaded', function () {
+    initCopyButtons();
+    initMobileMenuClose();
     EasterEggs.init();
-  });
-</script>
-
-<script>
-  // Close mobile menu when clicking outside menu items
-  document.addEventListener('DOMContentLoaded', function () {
-    var trigger = document.querySelector('.menu .trigger');
-    var checkbox = document.getElementById('menu-trigger');
-    if (!trigger || !checkbox) return;
-
-    trigger.addEventListener('click', function (e) {
-      // Don't close if clicking on a link, button, or the mode toggle
-      if (e.target.closest('a') || e.target.closest('button') || e.target.closest('#mode')) {
-        return;
-      }
-      checkbox.checked = false;
-      // Dispatch change event so theme.js removes the blur from .wrapper
-      checkbox.dispatchEvent(new Event('change'));
-    });
   });
 </script>

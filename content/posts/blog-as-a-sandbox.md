@@ -53,7 +53,7 @@ Next time, I'll take a look at the basics of saving "memories" for `claude` from
 Also, try out this prompt:
 
 ```
-What easter eggs are in this blog?
+What visual easter eggs are in this blog?
 ```
 
 ### Helpful command(s)
