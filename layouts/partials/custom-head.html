@@ -1,4 +1,9 @@
 <style>
+  .post-content a,
+  .post-content a:visited {
+    color: var(--primary, #1d7dfa) !important;
+  }
+
   pre>code {
     font-size: .9rem;
   }
@@ -159,6 +164,24 @@
     border-bottom: 1px solid var(--border, #e2e2e2);
   }
 
+  .post-item {
+    position: relative;
+    padding: .3rem;
+    border-bottom: 1px solid var(--border, #e2e2e2);
+  }
+
+  .post-item:hover {
+    background: color-mix(in srgb, var(--secondary, #8b8b8b) 15%, transparent);
+  }
+
+  html:not(.dark) .post-item .post-item-title a:hover {
+    color: red !important;
+  }
+
+  .dark .post-item .post-item-title a:hover {
+    color: #0f0 !important;
+  }
+
   .post-item .post-item-title {
     font-size: unset;
   }
@@ -175,6 +198,10 @@
   .post-entry .entry-content {
     margin: 0.5rem 0;
     color: var(--secondary, #8b8b8b);
+  }
+
+  html:not(.dark) .post-entry .entry-content {
+    color: var(--primary-text, #333);
   }
 
   .post-entry .entry-content p {
