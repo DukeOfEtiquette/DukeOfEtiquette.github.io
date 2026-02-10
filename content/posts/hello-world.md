@@ -2,6 +2,7 @@
 title = 'Hello NuWorld!'
 date = 2026-02-06
 draft = false
+tags = ['meta']
 +++
 
 The goal of this blog is to document my learning of AI tools, as well as document the podcasts/blogs/articles that I consume and my reaction to them.

@@ -3,6 +3,7 @@ title = 'Blog as a Sandbox (BaaS)'
 date = 2026-02-09
 draft = false
 pinned = true
+tags = ['claude-code', 'getting-started']
 +++
 
 ## A Sandbox For All

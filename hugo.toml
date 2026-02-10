@@ -5,6 +5,9 @@ defaultContentLanguage = 'en'
 enableEmoji = true
 enableRobotsTXT = true
 
+[taxonomies]
+  tag = 'tags'
+
 [params]
   sitename = 'DukeOfEtiquette'
   defaultColor = 'dark'
@@ -47,6 +50,12 @@ enableRobotsTXT = true
   name = 'Posts'
   url = '/posts/'
   weight = 20
+
+[[menu.main]]
+  pageRef = '/tags'
+  name = 'Tags'
+  url = '/tags/'
+  weight = 30
 
 [module]
   [[module.imports]]

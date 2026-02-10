@@ -1,0 +1,21 @@
+{{ define "main" }}
+<main class="main">
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+  </header>
+
+  <div class="tags-search">
+    <input type="text" id="tag-filter" placeholder="Filter tags..." autocomplete="off" />
+  </div>
+
+  <div class="tags-cloud" id="tags-cloud">
+    {{ range .Data.Terms.Alphabetical }}
+    <a href="{{ .Page.Permalink }}" class="tag-item" data-tag="{{ .Page.Title | lower }}">
+      {{ .Page.Title }}<span class="tag-count">{{ .Count }}</span>
+    </a>
+    {{ end }}
+  </div>
+
+  <p class="tags-no-results" id="tags-no-results" style="display:none;">No tags match your filter.</p>
+</main>
+{{ end }}
