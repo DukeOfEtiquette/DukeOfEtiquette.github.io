@@ -28,7 +28,7 @@
         "headline": {{ .Title }},
         "author": {
         "@type": "Person",
-        "name": "{{ .Site.Params.github }}"
+        "name": "{{ .Site.Params.author.name }}"
         },
         "datePublished": "{{ dateFormat "2006-01-02" .Date }}",
         "description": {{ .Description }},

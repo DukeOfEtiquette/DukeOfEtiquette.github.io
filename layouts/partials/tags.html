@@ -1,0 +1,7 @@
+{{ with . }}
+<div class="post-tags">
+  {{ range . }}
+  <a href="{{ "tags/" | absURL }}{{ . | urlize }}/" class="tag">{{ . }}</a>
+  {{ end }}
+</div>
+{{ end }}

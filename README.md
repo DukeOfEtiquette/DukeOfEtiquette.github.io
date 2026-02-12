@@ -12,8 +12,7 @@ Personal blog built with [Hugo](https://gohugo.io/) and the [Hugo Blog Awesome](
 ### With Docker (recommended)
 
 ```bash
-# Clone with submodules
-git clone --recurse-submodules https://github.com/DukeOfEtiquette/DukeOfEtiquette.github.io.git
+git clone https://github.com/DukeOfEtiquette/DukeOfEtiquette.github.io.git
 cd DukeOfEtiquette.github.io
 
 # Start the dev server
@@ -27,18 +26,11 @@ The site live-reloads as you edit files.
 ### With Hugo installed locally
 
 ```bash
-# Clone with submodules
-git clone --recurse-submodules https://github.com/DukeOfEtiquette/DukeOfEtiquette.github.io.git
+git clone https://github.com/DukeOfEtiquette/DukeOfEtiquette.github.io.git
 cd DukeOfEtiquette.github.io
 
 # Start the dev server
 hugo server -D
-```
-
-### If you already cloned without submodules
-
-```bash
-git submodule update --init --recursive
 ```
 
 ## Creating a New Post
@@ -67,10 +59,10 @@ pinned = true
 
 ## Deployment
 
-Deployment is automated via GitHub Actions. Pushing to the `main` branch triggers the workflow at `.github/workflows/deploy.yml`, which:
+Deployment is automated via GitHub Actions. Pushing to the `master` branch triggers the workflow at `.github/workflows/deploy.yml`, which:
 
 1. Installs Hugo extended
-2. Checks out the repo with submodules
+2. Checks out the repo
 3. Builds the site
 4. Deploys to GitHub Pages
 
@@ -85,11 +77,9 @@ In your repository settings, under **Pages**, set the source to **GitHub Actions
 ```
 .
 ├── archetypes/        # Content templates
-├── assets/            # Files processed by Hugo (SCSS, images)
 ├── content/posts/     # Blog posts
 ├── layouts/           # Layout overrides
 ├── static/            # Static files (copied as-is)
-├── themes/            # Hugo themes (git submodule)
 ├── hugo.toml          # Site configuration
 ├── Dockerfile         # Docker image for local dev
 └── docker-compose.yml # Docker Compose config

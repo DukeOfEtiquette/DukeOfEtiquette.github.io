@@ -1,0 +1,441 @@
+/* ==========================================================================
+   Links & Code blocks
+   ========================================================================== */
+
+.post-content a,
+.post-content a:visited {
+  color: var(--primary, #1d7dfa) !important;
+}
+
+pre>code {
+  font-size: .9rem;
+}
+
+.dark pre {
+  background: #2d333b;
+}
+
+.dark code {
+  background: #343942;
+  color: #adbac7;
+}
+
+.dark pre>code {
+  background: transparent;
+}
+
+pre {
+  position: relative;
+}
+
+:not(pre)>code {
+  position: relative;
+}
+
+:not(pre)>code:hover {
+  opacity: 0.8;
+}
+
+:not(pre)>code.copied::after {
+  content: 'Copied!';
+  position: absolute;
+  top: -1.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.25rem 0.5rem;
+  font-size: 0.7rem;
+  background: var(--primary, #1d7dfa);
+  color: #fff;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   Copy button
+   ========================================================================== */
+
+.copy-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  background: var(--secondary-bg, #e2e2e2);
+  color: var(--primary-text, #333);
+  border: none;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+pre:hover .copy-btn {
+  opacity: 1;
+}
+
+.copy-btn:hover,
+.dark .copy-btn:hover {
+  background: var(--primary, #1d7dfa);
+  color: #fff;
+}
+
+.dark .copy-btn {
+  background: #444c56;
+  color: #adbac7;
+}
+
+/* ==========================================================================
+   Mobile/responsive
+   ========================================================================== */
+
+@media (max-width: 767px) {
+  .main {
+    padding-top: 1rem;
+  }
+
+  .header {
+    margin-top: 2.5em;
+  }
+
+  .menu {
+    z-index: 100;
+  }
+
+  /* Mobile menu overlay - slightly transparent background */
+  .menu input[type="checkbox"]:checked~.trigger {
+    background-color: rgba(255, 255, 255, 0.85);
+  }
+
+  .dark .menu input[type="checkbox"]:checked~.trigger {
+    background-color: rgba(29, 30, 32, 0.85);
+  }
+
+  .footer {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 1.25rem;
+  }
+
+  .header {
+    margin-top: 0;
+  }
+}
+
+/* ==========================================================================
+   Layout & spacing
+   ========================================================================== */
+
+.page-header {
+  padding-left: .3rem;
+}
+
+.menu-icon {
+  padding-right: 1rem;
+}
+
+.logo svg {
+  vertical-align: middle;
+  margin-top: -.6rem;
+}
+
+.main {
+  max-width: calc(890px - (30px * 2));
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #000;
+  margin: 1rem 0;
+}
+
+html.dark hr {
+  border-top-color: #666;
+}
+
+/* ==========================================================================
+   Post entries & items
+   ========================================================================== */
+
+.post-entry {
+  position: relative;
+  padding: 1.0rem .3rem;
+  border-bottom: 1px solid var(--border, #e2e2e2);
+}
+
+.post-item {
+  position: relative;
+  padding: .3rem;
+  border-bottom: 1px solid var(--border, #e2e2e2);
+}
+
+.post-item:hover {
+  background: color-mix(in srgb, var(--secondary, #8b8b8b) 15%, transparent);
+}
+
+html:not(.dark) .post-item .post-item-title a:hover {
+  color: red !important;
+}
+
+.dark .post-item .post-item-title a:hover {
+  color: #0f0 !important;
+}
+
+.post-item .post-item-title {
+  font-size: unset;
+}
+
+.post-item-meta {
+  font-size: 1rem;
+}
+
+.post-entry .entry-header h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.5rem;
+}
+
+.post-entry .entry-content {
+  margin: 0.5rem 0;
+  color: var(--secondary, #8b8b8b);
+}
+
+html:not(.dark) .post-entry .entry-content {
+  color: var(--primary-text, #333);
+}
+
+.post-entry .entry-content p {
+  margin: 0;
+}
+
+.post-entry .entry-footer {
+  color: var(--secondary, #8b8b8b);
+  font-size: 0.75rem;
+}
+
+.post-entry .entry-link {
+  position: absolute;
+  inset: 0;
+}
+
+.post-entry:hover {
+  background: color-mix(in srgb, var(--secondary, #8b8b8b) 15%, transparent);
+}
+
+.post-entry.pinned {
+  border-left: 3px solid var(--primary, #1d7dfa);
+  padding-left: 1rem;
+}
+
+.pinned-label {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary, #1d7dfa);
+  margin-bottom: 0.125rem;
+}
+
+.post-footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border, #e2e2e2);
+}
+
+/* ==========================================================================
+   Pagination
+   ========================================================================== */
+
+.pagination {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 2rem 0 1rem;
+  margin: 0;
+}
+
+.pagination li a,
+.pagination li span {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  text-decoration: none;
+  color: var(--secondary, #8b8b8b);
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.pagination li a:hover {
+  background: color-mix(in srgb, var(--secondary, #8b8b8b) 15%, transparent);
+  color: var(--primary-text, #333);
+}
+
+.pagination li.active a {
+  background: var(--primary, #1d7dfa);
+  color: #fff;
+}
+
+.pagination li.disabled span {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.dark .pagination li a:hover {
+  color: #fff;
+}
+
+/* ==========================================================================
+   Tags
+   ========================================================================== */
+
+.tag {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.75rem;
+  background: color-mix(in srgb, var(--primary, #1d7dfa) 15%, transparent);
+  color: var(--primary, #1d7dfa);
+  border-radius: 3px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  position: relative;
+  z-index: 1;
+}
+
+.tag:hover {
+  background: var(--primary, #1d7dfa);
+  color: #fff;
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.entry-tags {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-left: 0.5rem;
+}
+
+/* Tags cloud page */
+.tags-search {
+  margin-bottom: 1.5rem;
+}
+
+.tags-search input {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid var(--border, #e2e2e2);
+  border-radius: 4px;
+  background: var(--secondary-bg, #fff);
+  color: var(--primary-text, #333);
+}
+
+.dark .tags-search input {
+  background: #2d333b;
+  color: #adbac7;
+  border-color: #444c56;
+}
+
+.tags-search input:focus {
+  outline: none;
+  border-color: var(--primary, #1d7dfa);
+}
+
+.tags-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.9rem;
+  background: color-mix(in srgb, var(--primary, #1d7dfa) 10%, transparent);
+  color: var(--primary, #1d7dfa);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, opacity 0.2s;
+}
+
+.tag-item:hover {
+  background: var(--primary, #1d7dfa);
+  color: #fff;
+}
+
+.tag-item:hover .tag-count {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+
+.tag-item.hidden {
+  display: none;
+}
+
+.tag-count {
+  display: inline-block;
+  padding: 0.1rem 0.4rem;
+  font-size: 0.7rem;
+  background: color-mix(in srgb, var(--primary, #1d7dfa) 20%, transparent);
+  border-radius: 3px;
+  line-height: 1;
+}
+
+.tags-no-results {
+  color: var(--secondary, #8b8b8b);
+  font-style: italic;
+}
+
+.back-to-tags {
+  display: inline-block;
+  margin-top: 0.25rem;
+  font-size: 0.85rem;
+  color: var(--primary, #1d7dfa);
+  text-decoration: none;
+}
+
+.back-to-tags:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Easter eggs (antenna blink)
+   ========================================================================== */
+
+.antenna-light {
+  animation: easterEggBlink 6s ease-in-out infinite;
+}
+
+@keyframes easterEggBlink {
+
+  0%,
+  70% {
+    fill-opacity: 1;
+  }
+
+  80%,
+  95% {
+    fill-opacity: 0;
+  }
+
+  100% {
+    fill-opacity: 1;
+  }
+}

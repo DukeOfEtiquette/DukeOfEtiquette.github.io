@@ -1,10 +1,2 @@
-github.com/1bl4z3r/hermit-V2 v1.1.29 h1:vEmFwH0j+0/lhjg0BYRJQDAN+bVmmAcHN14BUj2G0Lk=
-github.com/1bl4z3r/hermit-V2 v1.1.29/go.mod h1:jzBra4Jey2XWE2vYCkCqttBP3KxwFXpQMK0cBcsbO04=
-github.com/barklan/hugo-dead-simple v1.76.6 h1:lMH84OqjbdQSZD/gqV8tKNOwac/x59xwz7uChf2xI34=
-github.com/barklan/hugo-dead-simple v1.76.6/go.mod h1:Ql5njM3SwZWMqWD1bt6UQoebKHIuRt37HeEkiWMUxXo=
 github.com/hugo-sid/hugo-blog-awesome v1.21.0 h1:cxoeQgJePACmvPKqodDCLyme3iVAeGHm/l+iqyntGL4=
 github.com/hugo-sid/hugo-blog-awesome v1.21.0/go.mod h1:3XVERF66wgQpTsruOajS5Swr+uvyTzov1acafNaqm1E=
-github.com/panr/hugo-theme-terminal v2.1.0+incompatible h1:oSqo5Q4lWiIcBDFaASgrCEdXaEtH43foBd/ti21MEGE=
-github.com/panr/hugo-theme-terminal v2.1.0+incompatible/go.mod h1:kiO0NHUXPNrG6BFRlat5jc078p3e1f2sLlpt0a23MEY=
-github.com/vaga/hugo-theme-m10c v0.0.0-20250123151439-862c6e941be9 h1:Gqw9frHW9DdWklGN6gVuZSpecN84gYhf3fs/AiCRLgI=
-github.com/vaga/hugo-theme-m10c v0.0.0-20250123151439-862c6e941be9/go.mod h1:3196jMGTXhINTYZ+dXuDt53xvUQovqOj67kuczeXsjU=
