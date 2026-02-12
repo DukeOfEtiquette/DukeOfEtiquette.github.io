@@ -9,13 +9,7 @@
         </time>
         &nbsp;&middot;&nbsp;{{ .ReadingTime }} min
       </div>
-      {{ with .Params.tags }}
-      <div class="post-tags">
-        {{ range . }}
-        <a href="{{ "tags/" | absURL }}{{ . | urlize }}/" class="tag">{{ . }}</a>
-        {{ end }}
-      </div>
-      {{ end }}
+      {{ partial "tags.html" .Params.tags }}
     </header>
 
     {{ if .Params.toc }}
@@ -35,11 +29,7 @@
 
     {{ with .Params.tags }}
     <footer class="post-footer">
-      <div class="post-tags">
-        {{ range . }}
-        <a href="{{ "tags/" | absURL }}{{ . | urlize }}/" class="tag">{{ . }}</a>
-        {{ end }}
-      </div>
+      {{ partial "tags.html" . }}
     </footer>
     {{ end }}
   </article>
